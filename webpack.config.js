@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -6,6 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "my-second-webpack.bundle.js",
   },
+  plugins: [new HtmlWebpackPlugin({ template: "src/index.html" })],
   module: {
     rules: [
       {
@@ -26,6 +28,7 @@ module.exports = {
       },
     ],
   },
+
   devServer: {
     port: 8080,
     open: true,
